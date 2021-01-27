@@ -58,35 +58,36 @@ resource "azurerm_linux_virtual_machine" "server" {
 
 **Inputs**
 
-  **Name**                       **Description**                                                     **Type**     **Default**   **Required**
-  ------------------------------ ------------------------------------------------------------------- ------------ ------------- --------------
-  resource_group                 The Resource Group for the resources.                               String       n/a           yes
-  location                       The location/region for the resources                               String       n/a           yes
-  subnet_id                      The Subnet id for NIC.                                              String       n/a           yes
-  servername                     The Name of the Server.                                             String       n/a           yes
-  sku                            Virtual machine SKU                                                 String       n/a           yes
-  os_storage_account_type        OS Disk storage sku                                                 String       n/a           yes
-  zone                           Availability zone for the resource to be created in                 String       n/a           no
-  os_disk_size_gb                Enables data disk creation                                          number       n/a           yes
-  availability_set_id            Id of the availability set                                          String       n/a           no
-  source_image_id                The ID of an Image which each Virtual Machine should be based on    String       n/a           yes
-  data_disks                     Map of object of disk sizes                                         Map          n/a           no
-  create_data_disk               Enables data disk creation                                          String       n/a           no
-  tags                           A map of tags to add to all resources                               Map/String   n/a           no
-  boot_diag_storage_uri          Storage account URI for Boot Diagnostics.                           String       n/a           yes
-  key_vault_id                   The KeyVault ID to store SSH keys                                   String       n/a           no
-  dependancyAgent                Enables dependecy agent for Azure Monitor                           string       n/a           no
-  install_oms_agent              Installs OMS agent for Log Analytics                                String       n/a           no
-  log_analytics_workspace_id     ID for Log Analytics Work space.                                    String       n/a           no
-  log_analytics_workspace_key    Log Analytics access key                                            String       n/a           no
+
+  |Name                      |    Description                                                        |Type         |Default   |Required**
+  |---------------------------|----------------------------------------------------------------------|------------ ------------|---------------
+  |resource_group             |   The Resource Group for the resources.                              |String       | n/a       |   yes
+  |location                   |   The location/region for the resources                              | String      | n/a       |   yes
+  |subnet_id                  |    The Subnet id for NIC.                                            |  String     |  n/a      |    yes
+  |servername                 |    The Name of the Server.                                           |  String     |  n/a      |     yes
+  |sku                        |    Virtual machine SKU                                               |  String     |  n/a      |     yes
+  |os_storage_account_type    |    OS Disk storage sku                                               |  String     |  n/a      |     yes
+  |zone                       |    Availability zone for the resource to be created in               |  String     |  n/a      |     no
+  |os_disk_size_gb            |    Enables data disk creation                                        |  number     |  n/a      |     yes
+  |availability_set_id        |    Id of the availability set                                        |  String     |  n/a      |     no
+  |source_image_id            |    The ID of an Image which each Virtual Machine should be based on  |  String     |  n/a      |     yes
+  |data_disks                 |    Map of object of disk sizes                                       |  Map        |  n/a      |     no
+  |create_data_disk           |   Enables data disk creation                                         | String      | n/a       |    no
+  |tags                       |    A map of tags to add to all resources                             |  Map/String | n/a       |    no
+  |boot_diag_storage_uri      |    Storage account URI for Boot Diagnostics.                         |  String     |  n/a      |     yes
+  |key_vault_id               |    The KeyVault ID to store SSH keys                                 |  String     |  n/a      |     no
+  |dependancyAgent            |    Enables dependecy agent for Azure Monitor                         |  string     |  n/a      |     no
+  |install_oms_agent          |    Installs OMS agent for Log Analytics                              |  String     |  n/a      |     no
+  |log_analytics_workspace_id  |   ID for Log Analytics Work space.                                  |  String     |  n/a      |    no
+  |log_analytics_workspace_key  |  Log Analytics access key                                          |  String     |  n/a      |     no
 
 **Outputs**
 
 +-----------------------------------------------------------------+---+
 |                                                                 |   |
 |                                                                 |   |
-|   **Name**                        **Description**               |   |
-|   -------                                                       |   |
+|   **Name**                        **Description*              |   |
+|                                                      |   |
 | ------------------------ -------------------------------------- |   |
 |   vm_id                           Virtual machine ids created.  |   |
 |   vm_name                         Virtual machine name created  |   |
