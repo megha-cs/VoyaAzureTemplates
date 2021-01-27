@@ -34,9 +34,9 @@ resource "azurerm_storage_account" "bootstorage" {
 |------|-------------|------|---------|:--------:|
 | resource_group             |   The Resource Group for the resources.|String       | n/a       |   yes
 | location                   |   The location/region for the resources                              | String      | n/a       |   yes
-| boot_acc_replication_type  | The storage account replication type | `string` | n/a|yes
-| boot_acc_tier  | The storage account tier| `string` | n/a | yes
-| bootstoragename  | The storage account name| `string` | n/a | yes
+| boot_acc_replication_type  | The storage account replication type | String | n/a|yes
+| boot_acc_tier  | The storage account tier| String | n/a | yes
+| bootstoragename  | The storage account name| String | n/a | yes
 
 
 
