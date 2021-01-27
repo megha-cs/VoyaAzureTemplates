@@ -43,18 +43,18 @@ resource "azurerm_linux_virtual_machine" "server" {
 }
 ```
 
-**Requirements**
+## Requirements
 
-  **Name**    **Version**
-  ----------- -------------
-  terraform   \>= 0.12
-  azurerm     \>= 2.4.0
+| Name | Version |
+|------|---------|
+| terraform | >= 0.12.26 |
+| azurerm | >= 2.4.0 |
 
-**Providers**
+## Providers
 
-  **Name**   **Version**
-  ---------- -------------
-  azurerm    \>= 2.4.0
+| Name | Version |
+|------|---------|
+| azurerm | >= 2.4.0 |
 
 **Inputs**
 
@@ -97,5 +97,4 @@ resource "azurerm_linux_virtual_machine" "server" {
 +=================================================================+===+
 |                                                                 |   |
 +-----------------------------------------------------------------+---+
-
 
