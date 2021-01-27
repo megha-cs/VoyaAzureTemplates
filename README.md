@@ -59,7 +59,7 @@ resource "azurerm_linux_virtual_machine" "server" {
 **Inputs**
 
 
-  |Name                      |    Description                                                        |Type         |Default   |Required**
+  |Name                      |    Description                                                        |Type         |Default   |Required
   |---------------------------|----------------------------------------------------------------------|------------ ------------|---------------
   |resource_group             |   The Resource Group for the resources.                              |String       | n/a       |   yes
   |location                   |   The location/region for the resources                              | String      | n/a       |   yes
