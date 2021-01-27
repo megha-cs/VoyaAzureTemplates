@@ -82,7 +82,7 @@ resource "azurerm_linux_virtual_machine" "server" {
 
 
 
-##Outputs
+## Outputs
 
 | Name | Description |
 |------|-------------|
