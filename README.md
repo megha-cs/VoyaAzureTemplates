@@ -2,6 +2,7 @@ Linux_VM
 
 **Deploys an Linux VM**
 
+Creates an linux VM
 
 **Example**
 ```hcl
@@ -55,7 +56,8 @@ resource "azurerm_linux_virtual_machine" "server" {
 |------|---------|
 | azurerm | >= 2.4.0 |
 
-**Inputs**
+## Inputs
+
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | resource_group             |   The Resource Group for the resources.|String       | n/a       |   yes
@@ -80,8 +82,7 @@ resource "azurerm_linux_virtual_machine" "server" {
 
 
 
-
-**Outputs**
+##Outputs
 
 | Name | Description |
 |------|-------------|
