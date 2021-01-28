@@ -1,26 +1,23 @@
-Linux_VM
+Windows_VM
 
-**Deploys an Linux VM**
+**Deploys an Windows VM**
 
-Creates an linux VM
 
 **Example**
 ```hcl
-resource "azurerm_linux_virtual_machine" "server" {
-  name                            = upper(var.servername)
+resource "azurerm_windows_virtual_machine" "server" {
+  name                = upper(var.servername)
   resource_group_name = var.resource_group
   location            = var.location
   size                = var.sku
   admin_username      = lower(var.servername)
-  network_interface_ids = [azurerm_network_interface.nic.id,]
-  availability_set_id    = var.availability_set_id
-  provision_vm_agent    = true
+  admin_password      = random_password.password.result
+  network_interface_ids = ["${azurerm_network_interface.windows-nic.id}"]
+  availability_set_id = var.availability_set_id
+  provision_vm_agent = true
   source_image_id = var.source_image_id
   zone                  = var.zone
-  admin_ssh_key {
-    username   = lower(var.servername)
-    public_key = "${tls_private_key.example_ssh.public_key_openssh}"
-}
+
   os_disk {
     name                 = "${upper(var.servername)}-OsDisk1"
     caching              = "ReadWrite"
@@ -30,23 +27,24 @@ resource "azurerm_linux_virtual_machine" "server" {
   boot_diagnostics {
     storage_account_uri = var.boot_diag_storage_uri
     }
-   tags = var.tags
+
+    tags = var.tags
+
     lifecycle {
     ignore_changes = [
       tags,
       admin_username,
-      admin_ssh_key,
+      admin_password,
       identity,
       os_disk, 
     ]
   }
+ 
 }
 ```
-## Prerequisites 
-
 | Name	| Description	 |
 |-------|----------------|
-| KeyVault|		 to store ssh keys		 |			
+| KeyVault|		 to store password	 |			
 |	Log Analytics	|	used for log analytics workspace	 		 |
 | storage account | used for boot Diagnostics 
 
